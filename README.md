@@ -44,7 +44,7 @@ Please ensure that the `rebar.config` file of your OTP app contains a release de
       ]
     }.
 
-***IMPORTANT***
+***IMPORTANT***  
 In your `vm.args` file, add the `+B` flag to disable the break handler.  This then means that your app can be terminated with a single Ctrl-C, instead of the normal Ctrl-C followed by another Ctrl-C.
 
 ### Create a Procfile for CF to run
