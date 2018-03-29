@@ -20,7 +20,7 @@ if [ -f ${build_dir}/.preferred_otp_version ]; then
 fi
 
 ver=${OTP_VERSION:=${DEFAULT_OTP_VERSION}}
-tarball=${ver}.tar.gz
+tarball=OTP-${ver}.tar.gz
 OTP_TARBALL_URL="https://s3.amazonaws.com/heroku-buildpack-elixir/erlang/cedar-14/${tarball}"
 
 ERLROOT=${build_dir}/otp
