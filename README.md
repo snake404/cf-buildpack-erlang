@@ -31,7 +31,7 @@ If your `.preferred_otp_version` file contains `19.2`, then the file `OTP-19.2.t
 
 Rebar projects must be run via their application name, so it must be defined in a Procfile
 
-    $ echo "web: erl -pa ebin deps/*/ebin -noshell -s <app name>" > Procfile
+    $ echo "web: _build/default/rel/<app name>/bin/<app name> start" > Procfile
     $ git commit -m "Added Procfile" Procfile
 
 ### Build your CF App
