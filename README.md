@@ -1,4 +1,4 @@
-## Cloud Foundry build pack: Erlang
+## Cloud Foundry Build Pack: Erlang
 
 This is an updated Cloud Foundry build pack for Erlang OTP apps. Apps are built using [Rebar3](http://www.rebar3.org/) which in turn, assumes your Erlang app is a standard OTP app.
 
@@ -28,7 +28,7 @@ If your `.preferred_otp_version` file contains `19.2`, then the file `OTP-19.2.t
 
 ### Create an Erlang Release
 
-Please ensure that your OTP app contains a release definition in the `rebar.config` file:
+Please ensure that the `rebar.config` file of your OTP app contains a release definition.  Something like:
 
     {relx, [
         {release,
@@ -48,7 +48,7 @@ Please ensure that your OTP app contains a release definition in the `rebar.conf
 
 ### Create a Procfile for CF to run
 
-Erlang releases are run via their application name, so in the root directory of your repo, ensure that there is a Procfile containing the following:
+Erlang releases are run via their application name, so in the root directory of your repo, create a `Procfile` containing the following:
 
     web: _build/default/rel/<app_name>/bin/<app_name> start
 
@@ -56,5 +56,5 @@ Erlang releases are run via their application name, so in the root directory of 
 
 ### Build your CF App
 
-    $ cf push <app name> -b https://github.com/ChrisWhealy/cf-buildpack-erlang
+    $ cf push <app_name> -b https://github.com/ChrisWhealy/cf-buildpack-erlang
 
