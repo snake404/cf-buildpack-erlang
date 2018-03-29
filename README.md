@@ -6,7 +6,7 @@ It is based on an older version by [Aaron Speigel](https://github.com/spiegela/c
 
 ## WARNING
 
-This build pack is currently under development - its not ready for productive use yet!
+This build pack is currently under development - it is not ready for productive use yet!
 
 ## Update
 
@@ -26,16 +26,35 @@ This file must exist in the root directory of your repo and must contain only th
 
 If your `.preferred_otp_version` file contains `19.2`, then the file `OTP-19.2.tar.gz` will be downloaded from `https://s3.amazonaws.com/heroku-buildpack-elixir/erlang/cedar-14/`.
 
+### Create an Erlang Release
+
+Please ensure that your OTP app contains a release definition in the `rebar.config` file:
+
+    {relx, [
+        {release,
+          { <app_name>, "1.0.0" },
+          [ <app_name>, sasl, runtime_tools]
+        },
+
+        {sys_config, "./config/sys.config"},
+        {vm_args,    "./config/vm.args"},
+
+        {dev_mode, false},
+        {include_erts, true}
+      ]
+    }.
+
+
 
 ### Create a Procfile for CF to run
 
-Rebar projects must be run via their application name, so it must be defined in a Procfile
+Erlang releases are run via their application name, so in the root directory of your repo, ensure that there is a Procfile containing the following:
 
-    $ echo "web: _build/default/rel/<app name>/bin/<app name> start" > Procfile
-    $ git commit -m "Added Procfile" Procfile
+    web: _build/default/rel/<app_name>/bin/<app_name> start
+
+
 
 ### Build your CF App
 
     $ cf push <app name> -b https://github.com/ChrisWhealy/cf-buildpack-erlang
 
-You may need to write a new commit and push if your code was already up to date.
