@@ -4,6 +4,10 @@ This is an updated Cloud Foundry build pack for Erlang OTP apps. Apps are built 
 
 It is based on an older version by [Aaron Speigel](https://github.com/spiegela/cf-buildpack-erlang) that appears no longer to be maintained.
 
+## WARNING
+
+This build pack is currently under development - its not ready for productive use yet!
+
 ## Update
 
 The following updates have been:
