@@ -44,14 +44,17 @@ Please ensure that the `rebar.config` file of your OTP app contains a release de
       ]
     }.
 
-
+***IMPORTANT***
+In your `vm.args` file, add the `+B` flag to disable the break handler.  This then means that your app can be terminated with a single Ctrl-C, instead of the normal Ctrl-C followed by another Ctrl-C.
 
 ### Create a Procfile for CF to run
 
 Erlang releases are run via their application name, so in the root directory of your repo, create a `Procfile` containing the following:
 
-    web: _build/default/rel/<app_name>/bin/<app_name> start
+    web: _build/default/rel/<app_name>/bin/<app_name> foreground
 
+***IMPORTANT***  
+You must use the `foreground` command to start your app, not the `start` command.  The `start` command returns control to the OS which makes Cloud Foundry think your app has terminated with exit code 0.  This causes a startup error saying `Codependent process exited` and even though there's nothing wrong with your app, Cloud Foundry will not be able to run it.
 
 
 ### Build your CF App
