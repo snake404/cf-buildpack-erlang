@@ -85,4 +85,5 @@ fi
 
 echo "-----> Build succeeded"
 
-ls -l ${build_dir}
+echo "~nBuild directory contents"
+ls -l ${build_dir}/_build
