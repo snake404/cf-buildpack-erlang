@@ -16,7 +16,7 @@ test -z ${cache_dir} && exit
 DEFAULT_OTP_VERSION="20.1"
 
 if [ -f ${build_dir}/.preferred_otp_version ]; then
-    OTP_VERSION=$(cat ${build_dir}/.preferred_otp_version)
+  OTP_VERSION=$(cat ${build_dir}/.preferred_otp_version)
 fi
 
 ver=${OTP_VERSION:=${DEFAULT_OTP_VERSION}}
@@ -26,6 +26,14 @@ OTP_TARBALL_URL="https://s3.amazonaws.com/heroku-buildpack-elixir/erlang/cedar-1
 ERLROOT=${build_dir}/otp
 PROFILE=${build_dir}/.profile.d
 
+echo "-----> Build environment"
+echo "Home directory = ${home_dir}"
+echo "Build directory = ${build_dir}"
+echo "Erlang root = ${ERLROOT}"
+echo "Cache directory = ${cache_dir}"
+echo "Erlang OTP version = ${ver}"
+echo "Precompiled binary URL = ${OTP_TARBALL_URL}"
+
 echo "-----> Using Erlang/OTP $ver"
 
 (
@@ -34,8 +42,10 @@ echo "-----> Using Erlang/OTP $ver"
     # Already cached?
     test -f ${cache_dir}/${tarball} && exit
 
-    rm -rf ${cache_dir}/* # be sure not to build_dir up cruft
+    # No, so rebuild the cache directory
+    rm -rf ${cache_dir}/*
     cd ${cache_dir}
+
     echo "-------> Fetching Erlang/OTP $ver from ${OTP_TARBALL_URL}"
     curl -sO ${OTP_TARBALL_URL} || exit 1
 )
@@ -53,6 +63,7 @@ export PATH
 
 cd $build_dir
 
+# Does rebar3 already exist?
 if [ ! -e "rebar3" ]; then
   echo "-----> Installing Rebar from buildpack"
   cp ${home_dir}/opt/rebar3 ./
@@ -61,6 +72,7 @@ fi
 echo "-----> Building with Rebar3"
 unset GIT_DIR
 ./rebar3 get-deps compile 2>&1 | sed -u 's/^/       /'
+
 if [ ${PIPESTATUS[0]} -ne 0 ]; then
   echo "-----> Build failed"
   exit 1
@@ -72,3 +84,5 @@ if [ -f ${home_dir}/opt/otp.sh ]; then
 fi
 
 echo "-----> Build succeeded"
+
+ls -l ${build_dir}
