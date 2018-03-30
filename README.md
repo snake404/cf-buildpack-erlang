@@ -14,9 +14,9 @@ The following updates have been made:
 
 ### Select an Erlang version
 
-The Erlang/OTP release version that will be used to build and run your application is now sourced from a dot file called `.preferred_otp_version`.
+The Erlang/OTP release version that will be used to build and run your application is now obtained from a dot file called `.preferred_otp_version`.  If this file is missing, the OTP version will default to `20.1`.
 
-This file must exist in the root directory of your repo and must contain only the OTP version number you require.  Pre-compiled binaries from version from `17.0` upwards are available from the Cedar 14 stack.
+If this file can be found in the root directory of your repo, it must contain only the OTP version number you require.  Pre-compiled binaries from version from `17.0` upwards are available from the Cedar 14 stack.
 
 #### Example
 
