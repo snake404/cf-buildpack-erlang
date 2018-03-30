@@ -4,13 +4,9 @@ This is an updated Cloud Foundry build pack for Erlang OTP apps. Apps are built 
 
 It is based on an older version by [Aaron Speigel](https://github.com/spiegela/cf-buildpack-erlang) that appears no longer to be maintained.
 
-## WARNING
-
-This build pack is currently under development - it is not ready for productive use yet!
-
 ## Update
 
-The following updates have been:
+The following updates have been made:
 
 * Erlang tarballs are downloaded from Heroku Cedar 14 stack
 * Rebar3 is used instead of Rebar2.x
@@ -60,4 +56,4 @@ You must use the `foreground` command to start your app, not the `start` command
 ### Build your CF App
 
     $ cf push <app_name> -b https://github.com/ChrisWhealy/cf-buildpack-erlang
-
+  
