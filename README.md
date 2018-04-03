@@ -2,7 +2,6 @@
 
 This is an updated Cloud Foundry build pack for Erlang OTP apps. Apps are built using [Rebar3](http://www.rebar3.org/) which in turn, assumes your Erlang app is a standard OTP app.
 
-It is based on an older version by [Aaron Spiegel](https://github.com/spiegela/cf-buildpack-erlang) that appears no longer to be maintained.
 
 ## Update
 
