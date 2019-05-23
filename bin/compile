@@ -2,8 +2,13 @@
 
 ##
 # usage: bin/compile <build-dir> <cache-dir>
-echo "Listing the files"
+echo "Creating preferred file"
+echo '19.2' > ${build_dir}/.preferre_otp_version
+echo "Done preferred file"
+echo "Listing build dir content"
 ls
+echo "Done listing content"
+
 set -e
 home_dir=$(cd $(dirname $(dirname $0)); pwd)
 mkdir -p "$1" "$2"
@@ -15,7 +20,7 @@ cache_dir=$(cd "$2/" && pwd)
 test -z ${cache_dir} && exit
 
 DEFAULT_OTP_VERSION="20.1"
-cp ../.preferred_otp_version ${build_dir}
+
 if [ -f ${build_dir}/.preferred_otp_version ]; then
   OTP_VERSION=$(cat ${build_dir}/.preferred_otp_version)
 fi
