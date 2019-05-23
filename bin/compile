@@ -14,9 +14,21 @@ echo "Creating preferred file"
 echo '19.2' > ${build_dir}/.preferred_otp_version
 echo "Done preferred file"
 echo "Creating rebar file"
-var1='{relx,[{release,{custom-rabbit,"1.0.0"},[custom-rabbit,sasl,runtime_tools]},'
-var2='{dev_mode, false},{include_erts, true}]}.'
-result="$var1$var2"
+var1='{relx, [
+    {release,
+      { custom-rabbit, "1.0.0" },
+      [ custom-rabbit sasl, runtime_tools]
+    },
+
+    {sys_config, "./config/sys.config"},
+    {vm_args,    "./config/vm.args"},
+
+    {dev_mode, false},
+    {include_erts, true}
+  ]
+}.'
+var2=''
+result="$var1"
 echo "$result" > ${build_dir}/rebar.config
 more ${build_dir}/rebar.config
 echo "Finished rebar file"
