@@ -98,10 +98,10 @@ echo "-----> Building with Rebar3"
 unset GIT_DIR
 ./rebar3 release 2>&1 | sed -u 's/^/       /'
 
-if [ ${PIPESTATUS[0]} -ne 0 ]; then
-  echo "-----> Build failed"
-  exit 1
-fi
+#if [ ${PIPESTATUS[0]} -ne 0 ]; then
+#  echo "-----> Build failed"
+#  exit 1
+#fi
 
 if [ -f ${home_dir}/opt/otp.sh ]; then
   mkdir -p ${PROFILE}
