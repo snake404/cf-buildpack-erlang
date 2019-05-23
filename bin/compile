@@ -78,6 +78,7 @@ echo "-----> Using Erlang/OTP $ver"
 )
 
 echo "-------> Unpacking Erlang/OTP ${cache_dir}/${tarball}"
+more ./config/sys.config
 mkdir -p ${ERLROOT}
 tar zxf ${cache_dir}/${tarball} -C ${ERLROOT} --strip-components=1
 
