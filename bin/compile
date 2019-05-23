@@ -20,9 +20,6 @@ var1='{relx, [
       [ custom-rabbit, sasl, runtime_tools]
     },
 
-    {sys_config, "./config/sys.config"},
-    {vm_args,    "./config/vm.args"},
-
     {dev_mode, false},
     {include_erts, true}
   ]
