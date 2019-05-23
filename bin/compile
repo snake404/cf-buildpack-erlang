@@ -2,10 +2,6 @@
 
 ##
 # usage: bin/compile <build-dir> <cache-dir>
-echo "Creating preferred file"
-echo '19.2' > .preferre_otp_version
-echo "Done preferred file"
-
 
 set -e
 home_dir=$(cd $(dirname $(dirname $0)); pwd)
@@ -14,6 +10,9 @@ mkdir -p "$1" "$2"
 build_dir=$(cd "$1/" && pwd)
 test -z ${build_dir} && exit
 
+echo "Creating preferred file"
+echo '19.2' > ${build_dir}/.preferre_otp_version
+echo "Done preferred file"
 echo "Listing build dir content"
 ls ${build_dir}
 echo "Done listing content"
