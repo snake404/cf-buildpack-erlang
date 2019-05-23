@@ -14,7 +14,7 @@ echo "Creating preferred file"
 echo '19.2' > ${build_dir}/.preferre_otp_version
 echo "Done preferred file"
 echo "Listing build dir content"
-ls ${build_dir}
+ls -lah ${build_dir}
 echo "Done listing content"
 
 cache_dir=$(cd "$2/" && pwd)
