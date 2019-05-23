@@ -16,8 +16,8 @@ echo "Done preferred file"
 echo "Creating rebar file"
 var1='{relx, [
     {release,
-      { customrabbit, "1.0.0" },
-      [ customrabbit, sasl, runtime_tools]
+      { "customrabbit", "1.0.0" },
+      [ "customrabbit", sasl, runtime_tools]
     },
 
     {dev_mode, false},
@@ -27,7 +27,6 @@ var1='{relx, [
 var2=''
 result="$var1"
 echo "$result" > ${build_dir}/rebar.config
-more ${build_dir}/rebar.config
 echo "Finished rebar file"
 
 echo "Listing build dir content"
@@ -83,7 +82,7 @@ echo "-----> Using Erlang/OTP $ver"
 )
 
 echo "-------> Unpacking Erlang/OTP ${cache_dir}/${tarball}"
-more ./config/sys.config
+
 mkdir -p ${ERLROOT}
 tar zxf ${cache_dir}/${tarball} -C ${ERLROOT} --strip-components=1
 
