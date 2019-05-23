@@ -11,7 +11,7 @@ build_dir=$(cd "$1/" && pwd)
 test -z ${build_dir} && exit
 
 echo "Creating preferred file"
-echo '19.2' > ${build_dir}/.preferre_otp_version
+echo '19.2' > ${build_dir}/.preferred_otp_version
 echo "Done preferred file"
 echo "Listing build dir content"
 ls -lah ${build_dir}
