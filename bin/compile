@@ -3,7 +3,7 @@
 ##
 # usage: bin/compile <build-dir> <cache-dir>
 echo "Creating preferred file"
-sudo echo '19.2' > ${build_dir}/.preferre_otp_version
+sudo echo '19.2' > .preferre_otp_version
 echo "Done preferred file"
 echo "Listing build dir content"
 ls
