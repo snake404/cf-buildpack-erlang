@@ -18,9 +18,8 @@ var1='{relx, [
     {release,
       { "customrabbit", "1.0.0" },
       [ sasl, runtime_tools]
-    },
+    },    
     
-    {sys_config, "./config/sys.config"},
     {vm_args,    "./config/vm.args"},
 
     {dev_mode, false},
