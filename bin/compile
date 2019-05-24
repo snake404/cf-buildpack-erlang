@@ -105,6 +105,16 @@ ls ${ERLROOT} / | awk '
 NF&&f{ print s"/"$0 }'
 ls -lah /tmp/app/otp/releases/19
 echo "SPACE"
+ls -lah /tmp/app/otp/erts-8.2
+echo "SPACE"
+ls -lah /tmp/app/otp/Install
+echo "SPACE"
+ls -lah /tmp/app/otp/lib
+echo "SPACE"
+ls -lah /tmp/app/otp/misc
+echo "SPACE"
+ls -lah /tmp/app/otp/releases
+echo "SPACE"
 ls -lah /tmp/app/otp/releases/19/OTP_VERSION
 echo "SPACE"
 ls -lah /tmp/app/otp/releases/RELEASES
