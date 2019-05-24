@@ -107,7 +107,7 @@ ls -lah /tmp/app/otp/releases/19
 echo "SPACE"
 ls -lah /tmp/app/otp/releases/19/OTP_VERSION
 echo "SPACE"
-ls -lah /tmp/app/otp/RELEASES
+ls -lah /tmp/app/otp/releases/RELEASES
 echo "FINISHED ERL DIRECTORIES"
 cd $build_dir
 
