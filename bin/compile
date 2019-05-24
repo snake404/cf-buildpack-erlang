@@ -120,6 +120,9 @@ echo "LISTING ERL DIRECTORIES"
  echo "SPACE"
  ls -lah /tmp/app/otp/releases/RELEASES
  echo "FINISHED ERL DIRECTORIES"
+ echo "FINDING FILE"
+ find ${ERL_ROOT} -name "sys"
+ echo "END FINDING FILE"
 cd $build_dir
 
 # Does rebar3 already exist?
