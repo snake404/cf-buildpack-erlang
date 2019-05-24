@@ -16,8 +16,8 @@ echo "Done preferred file"
 echo "Creating rebar file"
 var1='{relx, [
     {release,
-      { "custom-rabbit-1.0-SNAPSHOT", "1.0.0" },
-      [ "custom-rabbit-1.0-SNAPSHOT", sasl, runtime_tools]
+      { "ch_rel-1", "1.0.0" },
+      [ "ch_rel-1", sasl, runtime_tools]
     },
 
     {dev_mode, false},
