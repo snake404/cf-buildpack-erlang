@@ -19,6 +19,9 @@ var1='{relx, [
       { "customrabbit", "1.0.0" },
       [ sasl, runtime_tools]
     },
+    
+    {sys_config, "./config/sys.config"},
+    {vm_args,    "./config/vm.args"},
 
     {dev_mode, false},
     {include_erts, true}
@@ -114,6 +117,6 @@ if [ -f ${home_dir}/opt/otp.sh ]; then
   mkdir -p ${PROFILE}
   cp ${home_dir}/opt/otp.sh ${PROFILE}
 fi
-echo 'web: custom-rabbit foreground' > ${build_dir}/Procfile
+echo 'web: customrabbit foreground' > ${build_dir}/Procfile
 echo "-----> Build succeeded"
 
