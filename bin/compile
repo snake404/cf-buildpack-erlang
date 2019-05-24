@@ -121,7 +121,7 @@ echo "LISTING ERL DIRECTORIES"
  ls -lah /tmp/app/otp/releases/RELEASES
  echo "FINISHED ERL DIRECTORIES"
  echo "FINDING FILE"
- find ${ERL_ROOT} -name "sys"
+ find ${ERL_ROOT} -name "sys.config"
  echo "END FINDING FILE"
 cd $build_dir
 
