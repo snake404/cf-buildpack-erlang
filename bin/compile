@@ -139,6 +139,6 @@ if [ -f ${home_dir}/opt/otp.sh ]; then
   mkdir -p ${PROFILE}
   cp ${home_dir}/opt/otp.sh ${PROFILE}
 fi
-echo 'web: customrabbit-1.0.0 foreground' > ${build_dir}/Procfile
+echo 'web: _build/default/rel/customrabbit-1.0.0/bin/customrabbit-1.0.0 foreground' > ${build_dir}/Procfile
 echo "-----> Build succeeded"
 
