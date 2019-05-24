@@ -98,26 +98,26 @@ export PATH
 
 echo "LISTING ERL DIRECTORIES"
 
-ls ${ERLROOT} / | awk '
-/:$/&&f{s=$0;f=0}
-/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
-NF&&f{ print s"/"$0 }'
-ls -lah /tmp/app/otp/releases/19
-echo "SPACE"
-ls -lah /tmp/app/otp/erts-8.2
-echo "SPACE"
-ls -lah /tmp/app/otp/Install
-echo "SPACE"
-ls -lah /tmp/app/otp/lib
-echo "SPACE"
-ls -lah /tmp/app/otp/misc
-echo "SPACE"
-ls -lah /tmp/app/otp/releases
-echo "SPACE"
-ls -lah /tmp/app/otp/releases/19/OTP_VERSION
-echo "SPACE"
-ls -lah /tmp/app/otp/releases/RELEASES
-echo "FINISHED ERL DIRECTORIES"
+# ls ${ERLROOT} / | awk '
+# /:$/&&f{s=$0;f=0}
+# /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
+# NF&&f{ print s"/"$0 }'
+# ls -lah /tmp/app/otp/releases/19
+# echo "SPACE"
+# ls -lah /tmp/app/otp/erts-8.2
+# echo "SPACE"
+# ls -lah /tmp/app/otp/Install
+# echo "SPACE"
+# ls -lah /tmp/app/otp/lib
+# echo "SPACE"
+# ls -lah /tmp/app/otp/misc
+# echo "SPACE"
+# ls -lah /tmp/app/otp/releases
+# echo "SPACE"
+# ls -lah /tmp/app/otp/releases/19/OTP_VERSION
+# echo "SPACE"
+# ls -lah /tmp/app/otp/releases/RELEASES
+# echo "FINISHED ERL DIRECTORIES"
 cd $build_dir
 
 # Does rebar3 already exist?
