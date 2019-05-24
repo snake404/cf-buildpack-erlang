@@ -11,7 +11,7 @@ build_dir=$(cd "$1/" && pwd)
 test -z ${build_dir} && exit
 
 echo "Creating preferred file"
-echo '19.2' > ${build_dir}/.preferred_otp_version
+echo '20.1' > ${build_dir}/.preferred_otp_version
 echo "Done preferred file"
 echo "Creating rebar file"
 var1='{relx, [
