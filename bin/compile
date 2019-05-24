@@ -122,6 +122,7 @@ echo "LISTING ERL DIRECTORIES"
  echo "FINISHED ERL DIRECTORIES"
  echo "FINDING FILE"
  find ${ERL_ROOT} -name "sys.config"
+ find ${build_dir} -name "sys.config"
  echo "END FINDING FILE"
 cd $build_dir
 
