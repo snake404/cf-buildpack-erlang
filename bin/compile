@@ -115,6 +115,8 @@ echo "LISTING ERL DIRECTORIES"
  ls -lah /tmp/app/otp/releases
  echo "SPACE"
  ls -lah /tmp/app/otp/usr
+  echo "SPACE"
+ ls -lah /tmp/app/otp/usr/lib
  echo "SPACE"
  ls -lah /tmp/app/otp/releases/RELEASES
  echo "FINISHED ERL DIRECTORIES"
