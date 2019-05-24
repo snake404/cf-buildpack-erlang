@@ -62,10 +62,10 @@ echo "Precompiled binary URL = ${OTP_TARBALL_URL}"
 
 echo "LISTING ALL DIRECTORIES"
 
-ls ${ERLROOT} / | awk '
-/:$/&&f{s=$0;f=0}
-/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
-NF&&f{ print s"/"$0 }'
+# ls ${ERLROOT} / | awk '
+# /:$/&&f{s=$0;f=0}
+# /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
+# NF&&f{ print s"/"$0 }'
 echo "FINISHED ALL DIRECTORIES"
 
 echo "-----> Using Erlang/OTP $ver"
@@ -96,6 +96,14 @@ ${ERLROOT}/Install -minimal /app/otp
 PATH=/app/otp/bin:$PATH
 export PATH
 
+
+echo "LISTING ERL DIRECTORIES"
+
+ls ${ERLROOT} / | awk '
+/:$/&&f{s=$0;f=0}
+/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
+NF&&f{ print s"/"$0 }'
+echo "FINISHED ERL DIRECTORIES"
 cd $build_dir
 
 # Does rebar3 already exist?
