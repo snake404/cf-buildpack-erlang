@@ -17,7 +17,7 @@ echo "Creating rebar file"
 var1='{relx, [
     {release,
       { "customrabbit", "1.0.0" },
-      [ kernel, stdlib, elk, sasl, runtime_tools]
+      [ kernel, stdlib, sasl, runtime_tools]
     },    
     
     {vm_args,    "./config/vm.args"},
